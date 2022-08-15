@@ -3,8 +3,11 @@ const path = require('path');
 const Userdb = require('./model/model');
 const dotenv = require('dotenv');
 const connectDB = require('./database/connection');
+const tokenBot = process.env.BOT_TOKEN;
 
-const bot = new Telegraf('5414779792:AAEE0CWnpiMIwKHAUnUw8i_mWQsv6IxSbL4');
+const bot = new Telegraf(`5414779792:AAEE0CWnpiMIwKHAUnUw8i_mWQsv6IxSbL4`);
+
+
 dotenv.config( { path : 'config.env'} )
 const helpMssg = `
     Command list :
