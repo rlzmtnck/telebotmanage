@@ -129,7 +129,7 @@ bot.command('del', ctx =>{
     
     Userdb.deleteOne(myquery, function(err, obj) {
         if (err) throw err;
-        console.log(" document(s) deleted");
+        ctx.reply(`Data ${userName} berhasil dihapus`);
         clearData();
         dbconn();
       });
