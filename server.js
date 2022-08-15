@@ -15,6 +15,7 @@ const helpMssg = `
     /exp  - Melihat expired user
     /address - Melihat address user
     /add  - Add user
+    /add nameUser  - Add user
 ` 
 
 
@@ -110,6 +111,31 @@ bot.command('add', ctx =>{
     clearData();
     dbconn();
   });
+  
+})
+
+bot.command('del', ctx =>{
+    let input  = ctx.message.text.split(" ");
+    if(input.length != 2){
+        ctx.reply("Input name");
+        return;
+    }
+    // console.log(input[1]);
+    // console.log(input[2]);
+    // console.log(input[3]);
+    let userName = input[1];
+    
+    var myquery = { name: `${userName}` };
+    
+    Userdb.deleteOne(myquery, function(err, obj) {
+        if (err) throw err;
+        console.log(" document(s) deleted");
+        clearData();
+        dbconn();
+      });
+
+   
+   
   
 })
 bot.launch();
