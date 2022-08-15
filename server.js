@@ -15,7 +15,7 @@ const helpMssg = `
     /exp  - Melihat expired user
     /address - Melihat address user
     /add  - Add user
-    /add nameUser  - Add user
+    /del nameUser  - Delete User by name
 ` 
 
 
